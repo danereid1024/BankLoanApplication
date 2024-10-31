@@ -1,0 +1,21 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <h2>{{ showLogin ? "Login to Your Account" : "Create an Account" }}</h2>
+    <div *ngIf="showLogin">
+      <app-login-page></app-login-page>
+    </div>
+    <div *ngIf="!showLogin">
+      <app-register-page></app-register-page>
+    </div>
+
+    <p class="toggle-text">
+      {{ showLogin ? "Don't have an account?" : "Already have an account?" }}
+      <a (click)="toggleView()">{{ showLogin ? "Register" : "Login" }}</a>
+    </p>
+
+    <button (click)="onGoogleLogin()" class="google-login-btn">
+      <img src="assets/google-icon.png" alt="Google Icon" />
+      Continue with Google
+    </button>
+  </div>
+</div>
