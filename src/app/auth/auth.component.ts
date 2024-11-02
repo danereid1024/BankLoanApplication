@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { RegisterPageComponent } from '../pages/register-page/register-page.component';
-import { LoginPageComponent } from '../pages/login-page/login-page.component';
 import { CommonModule } from '@angular/common';
+
+import { LoginPageComponent } from '../pages/login-page/login-page.component';
+import { RegisterPageComponent } from '../pages/register-page/register-page.component';
 
 @Component({
   selector: 'app-auth',
-  standalone: true,
-  imports: [CommonModule, RegisterPageComponent, LoginPageComponent],
   templateUrl: './auth.component.html',
-  styleUrl: './auth.component.scss',
+  styleUrls: ['./auth.component.scss'],
+  standalone: true,
+  imports: [CommonModule, LoginPageComponent, RegisterPageComponent],
 })
 export class AuthComponent {
   showLogin = true;
