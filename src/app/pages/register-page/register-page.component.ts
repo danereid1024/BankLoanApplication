@@ -17,17 +17,16 @@ export class RegisterPageComponent {
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
       email: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
     });
   }
 
   onSubmit(): void {
     if (this.registerForm.valid) {
       this.authService.registerUser(this.registerForm.value).subscribe(
-        response => console.log('Registration successful', response),
-        error => console.error('Registration failed', error)
-      )
-
+        (response) => console.log('Registration successful', response),
+        (error) => console.error('Registration failed', error)
+      );
     }
   }
 }
