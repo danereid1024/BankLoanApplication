@@ -1,0 +1,51 @@
+<section class="loan-calculator">
+  <h2>Loan Payment Estimator</h2>
+
+  <div class="calculator-wrapper">
+    <div class="calculator-input">
+      <label for="amount">Loan Amount</label>
+      <input
+        id="amount"
+        type="range"
+        [(ngModel)]="amount"
+        min="1000"
+        max="50000"
+        step="1000"
+      />
+      <p class="value-display">${{ amount }}</p>
+    </div>
+
+    <div class="calculator-input">
+      <label for="term">Term (months)</label>
+      <input
+        id="term"
+        type="range"
+        [(ngModel)]="term"
+        min="12"
+        max="72"
+        step="12"
+      />
+      <p class="value-display">{{ term }} months</p>
+    </div>
+
+    <div class="calculator-input">
+      <label>Interest Rate</label>
+      <input
+        id="rate"
+        type="number"
+        [(ngModel)]="rate"
+        step="0.01"
+        placeholder="Enter interest rate"
+      />
+      <p class="value-display">{{ rate }}% APR</p>
+    </div>
+  </div>
+
+  <div class="payment-display">
+    <h3>
+      Estimated Monthly Payment: ${{
+        calculateMonthlyPayment() | number : "1.2-2"
+      }}
+    </h3>
+  </div>
+</section>
