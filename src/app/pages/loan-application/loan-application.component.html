@@ -7,22 +7,25 @@
     <section class="loan-table">
       <h2>Existing Loans</h2>
       <table>
-        <tr>
-          <th>Sr No.</th>
-          <th>Bank</th>
-          <th>Loan Amount</th>
-          <th>EMI</th>
-        </tr>
-
-        @if (application.Loans.length > 0) { @for (item of application.Loans;
-        track $index) {
-        <tr>
-          <td>{{ $index + 1 }}</td>
-          <td>{{ item.bankName }}</td>
-          <td>{{ item.loanAmount }}</td>
-          <td>{{ item.emi }}</td>
-        </tr>
-        } }
+        <thead>
+          <tr>
+            <th>Sr No.</th>
+            <th>Bank</th>
+            <th>Loan Amount</th>
+            <th>EMI</th>
+          </tr>
+        </thead>
+        <tbody>
+          @if (application.Loans.length > 0) { @for (item of application.Loans;
+          track $index) {
+          <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ item.bankName }}</td>
+            <td>{{ item.loanAmount }}</td>
+            <td>{{ item.emi }}</td>
+          </tr>
+          } }
+        </tbody>
       </table>
       @if (application.Loans.length === 0) {
       <p>No loans Added Yet</p>
@@ -32,9 +35,8 @@
 
   <main class="loan-application-details">
     <h1>Loan Application Form</h1>
-
     <form>
-      <section class="section-container">
+      <section class="form-sections">
         <div class="form-section">
           <h2>Personal Information</h2>
           <div class="form-group">
@@ -124,7 +126,7 @@
         </div>
       </section>
 
-      <section class="section-container">
+      <section class="form-sections">
         <div class="form-section">
           <h2>Financial Details</h2>
           <div class="form-group">
@@ -166,16 +168,6 @@
               required
             />
           </div>
-          <div class="form-group">
-            <label for="assets">Assets: </label>
-            <input
-              type="text"
-              class="form-control"
-              [(ngModel)]="application.assets"
-              id="assets"
-              name="assets"
-            />
-          </div>
         </div>
 
         <div class="form-section">
@@ -213,15 +205,13 @@
               required
             />
           </div>
-          <button (click)="addLoan()" class="add-loan-button">
+          <button type="button" class="add-loan-button" (click)="addLoan()">
             Add Another Loan
           </button>
         </div>
       </section>
 
-      <button (click)="onSubmit()" class="submit-btn">
-        Submit Application
-      </button>
+      <button type="submit" class="submit-btn">Submit Application</button>
     </form>
   </main>
 </div>
