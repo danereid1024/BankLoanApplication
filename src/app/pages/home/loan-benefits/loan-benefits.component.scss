@@ -1,0 +1,105 @@
+$primary-color: #003366;
+$secondary-color: #0073e6;
+$background-gradient: linear-gradient(135deg, #d9e7ff, #ffffff);
+$card-background: rgba(255, 255, 255, 0.9);
+$hover-shadow: 0px 15px 30px rgba(0, 115, 230, 0.2);
+$default-shadow: 0px 10px 25px rgba(0, 115, 230, 0.1);
+$font-color-dark: #555;
+
+.loan-benefits {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: $background-gradient;
+  border-radius: 8px;
+
+  h2 {
+    color: $primary-color;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .benefit-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    .benefit-card {
+      background: $card-background;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: $default-shadow;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+      backdrop-filter: blur(8px);
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: $hover-shadow;
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        color: $primary-color;
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+        transition: color 0.3s ease;
+      }
+
+      p {
+        color: $font-color-dark;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    .benefit-grid {
+      gap: 1.5rem;
+
+      .benefit-card {
+        padding: 1.5rem;
+
+        h3 {
+          font-size: 1.2rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .benefit-card {
+      padding: 1.2rem;
+
+      h3 {
+        font-size: 1.1rem;
+      }
+
+      p {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}

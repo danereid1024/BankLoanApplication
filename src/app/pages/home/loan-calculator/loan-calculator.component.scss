@@ -1,0 +1,209 @@
+$primary-color: #ff8c00;
+$secondary-color: #63c9ff;
+$background-color: #f7f9fb;
+$card-background: #ffffff;
+$highlight-color: #ff8c00;
+$input-background: #f1f1f1;
+$shadow-color: rgba(0, 0, 0, 0.15);
+$label-color: #757575;
+$text-color: #333;
+
+.loan-calculator {
+  position: relative;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: $background-color;
+  border-radius: 20px;
+  overflow: hidden;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.background {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  z-index: -1;
+
+  .abstract-shapes {
+    position: absolute;
+    top: -20%;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at center,
+      $primary-color 30%,
+      $secondary-color 70%
+    );
+    border-radius: 50%;
+    opacity: 0.2;
+    filter: blur(80px);
+    animation: float 12s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(20px, 40px) rotate(45deg);
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 2rem;
+
+  .calculator-info {
+    flex: 1;
+    text-align: left;
+  }
+
+  .inputs {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      label {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $label-color;
+        text-transform: capitalize;
+      }
+
+      .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 12px;
+        background: $primary-color;
+        border-radius: 20px;
+        transition: background-color 0.3s ease;
+
+        &:focus {
+          outline: none;
+          background: $secondary-color;
+        }
+
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          width: 25px;
+          height: 25px;
+          background: $highlight-color;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: $secondary-color;
+          }
+        }
+      }
+
+      .input {
+        padding: 1rem;
+        font-size: 1rem;
+        color: $text-color;
+        background: $input-background;
+        border: 1px solid $primary-color;
+        border-radius: 15px;
+        transition: border 0.3s ease;
+
+        &:focus {
+          border-color: $highlight-color;
+          outline: none;
+        }
+      }
+
+      .value {
+        font-size: 1.2rem;
+        color: $text-color;
+        font-weight: 500;
+        text-align: center;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+
+    .calculator-info {
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .inputs {
+      width: 100%;
+    }
+
+    .result-card {
+      margin-top: 1rem;
+      padding: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .inputs {
+      gap: 1rem;
+    }
+
+    .result-card {
+      margin-top: 0.5rem;
+      padding: 1rem;
+    }
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $highlight-color;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: $label-color;
+  font-weight: 400;
+}
+
+.result-card {
+  background: $card-background;
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 1.5rem;
+
+  .result-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+
+  .result-amount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $secondary-color;
+  }
+}
