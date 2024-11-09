@@ -1,0 +1,42 @@
+<div class="transactions-card">
+  <div class="card-header">
+    <h3>Recent transactions</h3>
+    <div class="header-actions">
+      <button class="action-btn">
+        <i class="fas fa-filter"></i>
+        Filter
+      </button>
+      <button class="action-btn">
+        <i class="fas fa-download"></i>
+        Export
+      </button>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Recipient name</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactions">
+          <td>{{ transaction.recipientName }}</td>
+          <td>NGN {{ transaction.amount | number }}</td>
+          <td>{{ transaction.date }}</td>
+          <td>{{ transaction.type }}</td>
+          <td>
+            <span [class]="'status-badge ' + transaction.status.toLowerCase()">
+              {{ transaction.status }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

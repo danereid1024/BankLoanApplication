@@ -1,0 +1,136 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9fbfc;
+}
+
+.main-content {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.search-bar input {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+}
+
+.user-menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  align-items: center;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.top-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.balance-card,
+.stat-card,
+.transaction-flow,
+.recent-transactions,
+.quick-transfer {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stats-cards {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+}
+
+.stat-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 600px) {
+  .dashboard-container {
+    flex-direction: row;
+  }
+
+  .main-content {
+    padding: 24px;
+  }
+
+  .dashboard-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .search-bar input {
+    max-width: 300px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .top-section {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .transaction-flow,
+  .recent-transactions,
+  .quick-transfer {
+    padding: 20px;
+  }
+
+  .balance-card,
+  .stat-card {
+    width: 33.3%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
+
+  .transaction-flow {
+    grid-column: 1 / -1;
+  }
+
+  .recent-transactions {
+    grid-column: 1 / span 1;
+  }
+
+  .quick-transfer {
+    grid-column: 2 / span 1;
+  }
+
+  .balance-card,
+  .stat-card {
+    width: 32%;
+  }
+}

@@ -1,0 +1,41 @@
+<div class="sidebar" [class.open]="isSidebarOpen">
+  <div class="logo">
+    <img src="assets/bee-finance-logo.png" alt="Loan Bank" />
+  </div>
+  <nav>
+    <ul>
+      <li class="active">
+        <i class="dashboard-icon"></i>
+        Dashboard
+      </li>
+      <li>
+        <i class="transactions-icon"></i>
+        Transactions
+      </li>
+      <li>
+        <i class="wallet-icon"></i>
+        My wallet
+      </li>
+      <li>
+        <i class="help-icon"></i>
+        Help
+      </li>
+      <li>
+        <i class="cards-icon"></i>
+        Cards
+      </li>
+    </ul>
+  </nav>
+  <button class="logout-btn">
+    <i class="logout-icon"></i>
+    Log out
+  </button>
+
+  <button
+    class="sidebar-toggle"
+    aria-label="Toggle Sidebar"
+    (click)="toggleSidebar()"
+  >
+    <i class="menu-icon">☰</i>
+  </button>
+</div>

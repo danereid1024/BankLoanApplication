@@ -1,0 +1,49 @@
+<div class="dashboard-container">
+  <app-sidebar></app-sidebar>
+
+  <div class="main-content">
+    <header class="dashboard-header">
+      <div class="search-bar">
+        <input type="search" placeholder="Search" />
+      </div>
+      <div class="user-menu">
+        <button class="settings-btn">
+          <i class="settings-icon"></i>
+        </button>
+        <button class="notifications-btn">
+          <i class="notifications-icon"></i>
+        </button>
+        <button class="profile-btn">
+          <img src="assets/profile-pic.jpg" alt="Profile" />
+        </button>
+      </div>
+    </header>
+
+    <div class="dashboard-grid">
+      <div class="top-section">
+        <app-balance-card
+          class="balance-card"
+          [balance]="accountBalance"
+          [accountNumber]="accountNumber"
+        ></app-balance-card>
+
+        <div class="stats-cards">
+          <div class="stat-card">
+            <span class="label">Total transaction amount</span>
+            <span class="value">NGN {{ totalTransactionAmount }}</span>
+          </div>
+          <div class="stat-card">
+            <span class="label">Total transaction count</span>
+            <span class="value">{{ totalTransactionCount }}</span>
+          </div>
+        </div>
+      </div>
+
+      <app-transaction-flow class="transaction-flow"></app-transaction-flow>
+      <app-recent-transactions
+        class="recent-transactions"
+      ></app-recent-transactions>
+      <app-quick-transfer class="quick-transfer"></app-quick-transfer>
+    </div>
+  </div>
+</div>
