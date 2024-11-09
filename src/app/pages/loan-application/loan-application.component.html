@@ -174,14 +174,9 @@
           <h2>Loan Details</h2>
           <div class="form-group">
             <label for="bname">Bank Name:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="bname"
-              name="bname"
-              [(ngModel)]="loan.bankName"
-              required
-            />
+            <select class="form-control" id="bname" [(ngModel)]="selectedBanks" name="bname">
+              <option name="bname" *ngFor="let bank of banks" [value]="bank">{{ bank }}</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="loan">Loan Amount:</label>
@@ -211,7 +206,7 @@
         </div>
       </section>
 
-      <button type="submit" class="submit-btn">Submit Application</button>
+      <button type="submit" class="submit-btn" (click)="onSubmit()">Submit Application</button>
     </form>
   </main>
 </div>

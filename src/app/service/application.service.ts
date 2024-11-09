@@ -23,10 +23,6 @@ interface ApplicationData {
   dateApplied: Date
 }
 
-interface ApplicationResponse {
-  token: string;
-}
-
 @Injectable({
   providedIn: 'root'
 })
