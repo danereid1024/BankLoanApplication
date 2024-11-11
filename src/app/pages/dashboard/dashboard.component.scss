@@ -1,7 +1,7 @@
 .dashboard-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #f9fbfc;
 }
 
@@ -24,13 +24,6 @@
   border-radius: 8px;
   border: 1px solid #e0e0e0;
   width: 100%;
-}
-
-.user-menu {
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-  align-items: center;
 }
 
 .dashboard-grid {

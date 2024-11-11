@@ -25,20 +25,6 @@ export class RecentTransactionsComponent {
       status: 'Successful',
     },
     {
-      recipientName: 'Wade Warren',
-      amount: 13000,
-      date: '12 Oct, 2023',
-      type: 'Credit',
-      status: 'Successful',
-    },
-    {
-      recipientName: 'Jane Cooper',
-      amount: 27000,
-      date: '12 Oct, 2023',
-      type: 'Debit',
-      status: 'Failed',
-    },
-    {
       recipientName: 'Jane Cooper',
       amount: 27000,
       date: '12 Oct, 2023',

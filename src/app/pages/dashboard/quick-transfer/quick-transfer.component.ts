@@ -29,17 +29,5 @@ export class QuickTransferComponent {
       bankName: 'Smith Bank',
       avatar: 'assets/avatars/annette.jpg',
     },
-    {
-      name: 'Jane Cooper',
-      accountNumber: '0123456789',
-      bankName: 'UTBank',
-      avatar: 'assets/avatars/jane.jpg',
-    },
-    {
-      name: 'Floyd Miles',
-      accountNumber: '0123456789',
-      bankName: 'First Bank',
-      avatar: 'assets/avatars/floyd.jpg',
-    },
   ];
 }
