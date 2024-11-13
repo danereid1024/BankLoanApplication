@@ -36,7 +36,7 @@ export class LoanApplicationComponent implements OnInit{
   application: Application = new Application();
   loan: Loan = new Loan();
   masterService = inject(MainService);
-
+  
   addLoan() {
     const strObj = JSON.stringify(this.loan);
     const newObj = JSON.parse(strObj);
@@ -52,7 +52,7 @@ export class LoanApplicationComponent implements OnInit{
     this.masterService.addNewApplication(this.application).subscribe(
       (Result: ApiResponseModel) => {
         if (Result.result) {
-          alert('Loan Application Success');
+          alert('Application Success');
           // Optionally, reset the application object here if needed
           this.application = new Application();
         } else {
@@ -63,5 +63,19 @@ export class LoanApplicationComponent implements OnInit{
         alert(error);
       }
     );
+    
+    this.masterService.addnewLoan(this.loan).subscribe(
+      (Result: ApiResponseModel) => {
+        if (Result.result) {
+          alert('Loan Success');
+          this.loan = new Loan();
+        } else {
+          alert(Result.message);
+        }
+      },
+      (error) => {
+        alert(error);
+      }
+    )
   }
 }

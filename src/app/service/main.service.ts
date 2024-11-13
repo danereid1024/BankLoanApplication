@@ -23,6 +23,12 @@ interface ApplicationData {
     dateApplied: Date
 }
 
+interface LoanData {
+  bankName: string,
+  loanAmount: number
+  emi: number
+}
+
 interface ApiResponseModel {
     message: string
     result: boolean
@@ -44,6 +50,12 @@ export class MainService {
     return this.http
       .post<ApiResponseModel>(API_ENDPOINTS.APPLICATION, applicationData)
       .pipe(catchError(this.handleError));
+  }
+
+  addnewLoan(loanData: LoanData): Observable<ApiResponseModel> {
+    return this.http
+      .post<ApiResponseModel>(API_ENDPOINTS.LOAN, loanData)
+      .pipe(catchError(this.handleError))
   }
 
   private handleError(error: HttpErrorResponse): Observable<ApiResponseModel> {
