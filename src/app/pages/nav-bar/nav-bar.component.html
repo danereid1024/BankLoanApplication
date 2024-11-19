@@ -14,21 +14,13 @@
 
     <nav class="desktop-nav">
       <a routerLink="/home" routerLinkActive="active">Home</a>
-      <a routerLink="/loan-application" routerLinkActive="active"
-        >Application</a
-      >
+
       <a routerLink="/auth" routerLinkActive="active">Login/Register</a>
     </nav>
 
     <nav class="mobile-nav" *ngIf="isMenuOpen" [@slideInOut]>
       <a routerLink="/home" routerLinkActive="active" (click)="toggleMenu()"
         >Home</a
-      >
-      <a
-        routerLink="/loan-application"
-        routerLinkActive="active"
-        (click)="toggleMenu()"
-        >Application</a
       >
       <a routerLink="/auth" routerLinkActive="active" (click)="toggleMenu()"
         >Login/Register</a

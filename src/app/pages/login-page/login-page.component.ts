@@ -39,6 +39,23 @@ export class LoginPageComponent {
     return this.loginForm.get('password')!;
   }
 
+  // onSubmit() {
+  //   if (this.loginForm.valid) {
+  //     this.serverError = null;
+  //     this.authService.loginUser(this.loginForm.value).subscribe(
+  //       (response) => {
+  //         console.log('Login successful', response);
+  //         localStorage.setItem('token', response.token);
+  //         this.router.navigate(['/dashboard']);
+  //       },
+  //       (error) => {
+  //         this.serverError =
+  //           error.error?.error || 'Login failed. Please try again.';
+  //         console.error('Login error:', error);
+  //       }
+  //     );
+  //   }
+  // }
   onSubmit() {
     if (this.loginForm.valid) {
       this.serverError = null;
@@ -46,7 +63,7 @@ export class LoginPageComponent {
         (response) => {
           console.log('Login successful', response);
           localStorage.setItem('token', response.token);
-          // this.router.navigate(['/dashboard']);
+          this.router.navigate(['/dashboard']); // Redirect to the dashboard
         },
         (error) => {
           this.serverError =

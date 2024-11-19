@@ -16,7 +16,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     SidebarComponent,
   ],
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'], // Ensure correct spelling
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
   accountBalance = 1234000.0;

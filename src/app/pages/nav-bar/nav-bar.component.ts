@@ -34,4 +34,9 @@ export class NavBarComponent {
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
+  isSidebarOpen = false;
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+  }
 }
